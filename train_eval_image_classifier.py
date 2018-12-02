@@ -16,13 +16,13 @@ def parse_args(check=True):
     parser.add_argument('--checkpoint_exclude_scopes', type=str, default='InceptionV2/Logits,InceptionV2/AuxLogits/Aux_logits')
     parser.add_argument('--train_dir', type=str)
     parser.add_argument('--learning_rate', type=float, default=0.1)
-    parser.add_argument('--clone_on_cpu', type=bool, default=False)
+    parser.add_argument('--clone_on_cpu', type=bool, default=True)
     parser.add_argument('--optimizer', type=str, default='rmsprop')
     parser.add_argument('--batch_size', type=int, default=32)
 
     # eval
-    parser.add_argument('--dataset_split_name', type=str, default='validation')
-    parser.add_argument('--eval_dir', type=str, default='validation')
+    parser.add_argument('--dataset_split_name', type=str, default='train')
+    parser.add_argument('--eval_dir', type=str, default='eval')
     parser.add_argument('--max_num_batches', type=int, default=128)
 
     FLAGS, unparsed = parser.parse_known_args()
